@@ -53,7 +53,7 @@ import java.util.Map;
 
 class Solution {
     /**
-     * Solution: 暴力破解，双层循环遍历。
+     * Solution: 暴力破解法，双层循环遍历。
      * Optimization: 在暴力破解的基础上，利用hashMap减少遍历次数，以空间换时间
      *
      * Debug: 输入
