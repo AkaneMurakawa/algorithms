@@ -23,7 +23,10 @@ learning algorithm note. First you need to know basic data structure, such as ar
 
 
 ## Stack
-
+| # | Title | Solution | Difficulty |
+| --- | --- | --- | --- |
 
 ## Queue
-
+| # | Title | Solution | Difficulty |
+| --- | --- | --- | --- |
+| 3 | [Longest Substring Without Repeating Characters](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) | [Java](./src/longestSubstringWithoutRepeatingCharacters/LongestSubstringWithoutRepeatingCharacters.java) | Medium |
