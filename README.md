@@ -15,7 +15,7 @@ learning algorithm note. First you need to know basic data structure, such as ar
 | --- | --- | --- | --- |
 | 1 | [Tow Sum](https://leetcode-cn.com/problems/two-sum/) | [Java](./src/towSum/TowSum.java) | Easy |
 | 4 | [Median Of Two Sorted Arrays](https://leetcode.cn/problems/median-of-two-sorted-arrays/) | [Java](./src/medianOfTwoSortedArrays/MedianOfTwoSortedArrays.java) | Hard |
-
+| 5 | [Longest Palindromic Substring](https://leetcode.cn/problems/longest-palindromic-substring/) | [Java](./src/longestPalindromicSubstring/LongestPalindromicSubstring.java) | Medium |
 
 ## Linked List
 | # | Title | Solution | Difficulty |
