@@ -37,7 +37,7 @@
 // Related Topics 数组 二分查找 分治
 // 👍 5747 👎 0
 
-package medianOfTwoSortedArrays;
+package leetcode.medianOfTwoSortedArrays;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -47,29 +47,29 @@ import java.text.DecimalFormat;
 class Solution {
     /**
      * Solution: 数组是正序的，暴力破解法是合并数组，之后根据个数的奇偶数计算结果。
-     *           不过并不需要全部遍历合并，我们可以进行伪合并，每次判断是否找到结果。
+     * 不过并不需要全部遍历合并，我们可以进行伪合并，每次判断是否找到结果。
      * Optimization: 使用二分查找，如总共有7个数，则我们需要寻找到第4个数，7/2 = 3，3 + 1 = 4；
-     *           此时，先进行二分查找，先排除一半不符合的，设k：4/2 = 2，则可以去除数组A、B中其中不符合的k个；
-     *           此时，剩余k = 4 - 2 = 2，继续重复上一步；
-     *           直到找到k=1，即剩下一个要找到的数。
-     *           1. 当A排除所有不符合的时候，直接找B
-     *           2. 当B排除所有不符合的时候，直接找A
-     *
+     * 此时，先进行二分查找，先排除一半不符合的，设k：4/2 = 2，则可以去除数组A、B中其中不符合的k个；
+     * 此时，剩余k = 4 - 2 = 2，继续重复上一步；
+     * 直到找到k=1，即剩下一个要找到的数。
+     * 1. 当A排除所有不符合的时候，直接找B
+     * 2. 当B排除所有不符合的时候，直接找A
+     * <p>
      * Debug: 输入
-[1,3]
-[2]
-
-[1,2]
-[3,4]
-
-[0,0,0,0,0]
-[-1,0,0,0,0,0,1]
+     * [1,3]
+     * [2]
+     * <p>
+     * [1,2]
+     * [3,4]
+     * <p>
+     * [0,0,0,0,0]
+     * [-1,0,0,0,0,0,1]
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int total = nums1.length + nums2.length;
         if (total % 2 == 1) {
             int midIndex = total / 2;
-            return getKthElement(nums1, nums2,  midIndex + 1);
+            return getKthElement(nums1, nums2, midIndex + 1);
         } else {
             int midIndex1 = total / 2 - 1, midIndex2 = total / 2;
             return (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2F;
@@ -78,12 +78,13 @@ class Solution {
 
     /**
      * 二分查找
-     * @param k  第几个数(-1即中位下标)，(m+n)/2
-     *           例如：4 / 2 = 2; 0123, k等于第2和3个, 取下标等于1和2
-     *           例如：3 / 2 = 1; 012, k等于第2个, 取下标等于1
+     *
+     * @param k 第几个数(-1即中位下标)，(m+n)/2
+     *          例如：4 / 2 = 2; 0123, k等于第2和3个, 取下标等于1和2
+     *          例如：3 / 2 = 1; 012, k等于第2个, 取下标等于1
      * @return
      */
-    public double getKthElement(int[] nums1, int[] nums2, int k){
+    public double getKthElement(int[] nums1, int[] nums2, int k) {
         /* 主要思路：要找到第 k (k>1) 小的元素，那么就取 pivot1 = nums1[k/2-1] 和 pivot2 = nums2[k/2-1] 进行比较
          * 这里的 "/" 表示整除
          * nums1 中小于等于 pivot1 的元素有 nums1[0 .. k/2-2] 共计 k/2-1 个

@@ -38,7 +38,7 @@
 // Related Topics 哈希表 字符串 滑动窗口
 // 👍 7985 👎 0
 
-package longestSubstringWithoutRepeatingCharacters;
+package leetcode.longestSubstringWithoutRepeatingCharacters;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -50,7 +50,7 @@ class Solution {
      * Solution: 最长不重复子串，暴力破解法，遍历字符串，如有重复则从上一个串的第二个字符重新开始继续遍历
      * Optimization: 滑动窗口，设置左右两个指针，交叉移动，直到右指针不再重复或遍历结束。
      * 其实和暴力破解法是类似的，遇到重复则从左字符串下一个开始继续遍历，通过HashSet以空间换时间，并且提前结束减少不必要的遍历
-     *
+     * <p>
      * Debug: 输入dvdf
      */
     public int lengthOfLongestSubstring(String s) {
@@ -71,7 +71,7 @@ class Solution {
             // i: 左指针向右移动一格
             occ.remove(s.charAt(i));
 
-            if (rk == sz - 1){
+            if (rk == sz - 1) {
                 break;
             }
         }

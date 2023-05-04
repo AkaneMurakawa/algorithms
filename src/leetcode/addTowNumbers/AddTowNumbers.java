@@ -43,7 +43,7 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
-package addTowNumbers;
+package leetcode.addTowNumbers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -91,10 +91,10 @@ class Solution {
     /**
      * Solution: 链表是非空的，只需要循环遍历链表，每次存取两数之和进位值，用于下一次相加，最后一次进位值单独处理即可
      * Optimization:
-     *
+     * <p>
      * Debug: 输入
-[9,9,9,9,9,9,9]
-[9,9,9,9]
+     * [9,9,9,9,9,9,9]
+     * [9,9,9,9]
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 保存结果链表

@@ -43,7 +43,7 @@
 // Related Topics 数组 哈希表
 // 👍 15068 👎 0
 
-package towSum;
+package leetcode.towSum;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -55,10 +55,10 @@ class Solution {
     /**
      * Solution: 暴力破解法，双层循环遍历。
      * Optimization: 在暴力破解的基础上，利用hashMap减少遍历次数，以空间换时间
-     *
+     * <p>
      * Debug: 输入
-[2,7,11,15]
-9
+     * [2,7,11,15]
+     * 9
      */
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> hashMap = new HashMap<>();

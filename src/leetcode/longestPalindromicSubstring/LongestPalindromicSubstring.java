@@ -28,7 +28,7 @@
 // Related Topics 字符串 动态规划
 // 👍 5584 👎 0
 
-package longestPalindromicSubstring;
+package leetcode.longestPalindromicSubstring;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -65,7 +65,7 @@ class Solution {
                 rk = sz - 1;
             } else {
                 // 比现有回文子串长则进行对比
-                if (s.substring(left, right + 1).length() > ans.length()){
+                if (s.substring(left, right + 1).length() > ans.length()) {
                     // i和rk之间存在两个数以上才需要比较
                     while (i + 2 <= rk) {
                         if (s.charAt(i) != s.charAt(rk)) {
@@ -80,7 +80,7 @@ class Solution {
                 }
                 // 未匹配则重置，如右边包含多个left，则继续匹配
                 boolean multiLeft = s.substring(left + 1, right).indexOf(s.charAt(left)) != -1;
-                rk =  multiLeft ? right - 1 : sz - 1;
+                rk = multiLeft ? right - 1 : sz - 1;
                 left = multiLeft ? left : left + 1;
                 i = right = left;
             }
